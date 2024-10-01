@@ -13,17 +13,6 @@ import UserProgressRouter from "./Routes/userprogress.js";
 
 const app = express();
 
-app.use(
-  cors({
-    // origin: "https://lingo-silk-nine.vercel.app/",
-    origin: "*",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    // allowedHeaders: ["Content-Type", "Authorization"],
-
-    credentials: true,
-  })
-);
-
 app.listen(PORT, () => {
   console.log("Done Connect Server");
   // getConnectToDatabase();
@@ -35,6 +24,13 @@ mongoose
   )
   .then(() => console.log("Database is connected✌️"))
   .catch((error) => console.log(error));
+
+const corsOptions = {
+  origin: "https://lingo-silk-nine.vercel.app", // النطاق المسموح به
+  credentials: true, // السماح بإرسال معلومات الاعتماد
+};
+
+app.use(cors(corsOptions));
 
 // const getConnectToDatabase = async () => {
 //   try {
