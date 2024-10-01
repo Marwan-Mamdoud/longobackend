@@ -20,7 +20,7 @@ export const deleteUnit = async (req, res, next) => {
   try {
     const { unitId } = req.params;
     const data = await Units.findByIdAndDelete(unitId);
-    if (data) return res.status(200).json({ message: "Done Delete Unit" });
+    return res.status(200).json({ message: "Done Delete Unit" });
   } catch (error) {
     console.log(error.message);
     res.status(400).json({ error: error.message });

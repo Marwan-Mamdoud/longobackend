@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 ///========================================================================================
 ///========================================================================================
 
-const units = new mongoose.Schema({
+const units = mongoose.Schema({
   title: { type: String, required: true },
   description: { type: String, required: true },
   order: { type: Number, required: true },
@@ -34,7 +34,7 @@ export const Courses = mongoose.model("Courses", courses);
 ///========================================================================================
 ///========================================================================================
 
-const lessons = new mongoose.Schema({
+const lessons = mongoose.Schema({
   title: { type: String, required: true },
   unitId: {
     type: mongoose.Schema.Types.ObjectId,
@@ -52,7 +52,7 @@ export const Lessons = mongoose.model("Lessons", lessons);
 ///========================================================================================
 ///========================================================================================
 
-const challenges = new mongoose.Schema({
+const challenges = mongoose.Schema({
   lessonId: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
@@ -74,7 +74,7 @@ export const Challenges = mongoose.model("Challenges", challenges);
 ///========================================================================================
 ///========================================================================================
 
-const challengeOptions = new mongoose.Schema({
+const challengeOptions = mongoose.Schema({
   challengeId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Challenges",
