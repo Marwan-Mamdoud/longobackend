@@ -15,7 +15,8 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://lingo-silk-nine.vercel.app/",
+    // origin: "https://lingo-silk-nine.vercel.app/",
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE"],
     // allowedHeaders: ["Content-Type", "Authorization"],
 
